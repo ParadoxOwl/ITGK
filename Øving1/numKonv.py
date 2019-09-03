@@ -1,0 +1,6 @@
+num1=float(input('Skriv inn et flyttall: '))
+num2=float(input('Skriv inn enda et flyttall: '))
+num3=float(input('Skriv inn et siste flyttall: '))
+print(f'Konvertert til heltall blir det: {int(num1)}, {int(num2)}, {int(num3)}')
+num4=int(input('Skriv inn et heltall: '))
+print(f'Konvertert til flyttall blir det: {float(num4)}')

@@ -1,0 +1,6 @@
+name = input('Skriv ditt navn: ')
+age = int(input(f'Hei, {name}, hvor gammel er du? '))
+prog_age = int(input('hvor gammel var du da du begynte å programmere? '))
+print(f'Da har du programmert i {age-prog_age} år')
+input(f'Syns du at de {age-prog_age} årene har vært givende? ')
+print(f'Takk for ditt svar, {name}!')
