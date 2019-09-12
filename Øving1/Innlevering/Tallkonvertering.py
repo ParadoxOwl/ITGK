@@ -21,34 +21,34 @@
 #     </ul>
 #   </div>
 # </nav>
-# 
+#
 # # Tallkonvertering
-# 
+#
 # **Læringsmål:**
-# 
+#
 # * Konvertering mellom datatyper med standardfunksjoner som int() og float()
-# 
+#
 # * Forstå definisjonen av heltall og flyttall
-# 
+#
 # **Starting Out with Python:**
-# 
+#
 # * Kap. 2.6
-# 
+#
 # * Kap. 2.8
 
 # ## Tutorial del 1: Konvertering mellom datatyper
 
 # Vi kan ha ulike typer data, som tekststrenger (f.eks. `"Python"`), heltall (f.eks. `42`), flyttall (f.eks. `9.80`) og sannhetsverdier (`True`, `False`). Ofte kommer vi i situasjoner hvor vi har data av en viss type, men vi trenger samme data bare med en annen type. Da må vi konvertere dataene. Noen vanlige konverteringsfunksjoner:
-# 
+#
 # **`int()`** - konverterer til heltall.
 # - `int('423')` gir 423 (dvs. tekststrengen blir konvertert til et tall). Virker kun hvis tekststrengen faktisk inneholder et heltall.
 # - `int(5.69)` gir 5 (dvs. for flyttall blir desimaldelen fjernet)
-# 
+#
 # **`float()`** - konverterer til flyttall
 # - `float('5.69')` gir 5.69 (tekststreng konvertert til tall)
 # - `float('5')` gir 5.0, dvs. float() virker på tekststrenger enten de inneholder flyttall eller heltall (men ikke på strenger som er noe annet enn tall)
 # - `float(5)` gir 5.0
-# 
+#
 # **`str()`** - konverterer til tekststreng
 # - `str(42)` gir '42'
 # - `str(5.69)` gir '5.69'
@@ -56,17 +56,17 @@
 
 # In[ ]:
 
-
-alder = input("Hvor gammel er du?")
-alder_mor = input("Hvor gammel er din mor?")
-sum_alder = alder + alder_mor
-print("Gratulerer, til sammen er dere", sum_alder, "år!")
-svar = input("Hva syns dere om å være ", sum_alder, "? ")
-
+#
+#alder = input("Hvor gammel er du?")
+#alder_mor = input("Hvor gammel er din mor?")
+#sum_alder = alder + alder_mor
+#print("Gratulerer, til sammen er dere", sum_alder, "år!")
+#svar = input("Hva syns dere om å være ", sum_alder, "? ")
+#
 
 # Et eksempel på kjøring kan være som følger:
-#     
-#   
+#
+#
 # ```python
 # Hvor gammel er du? 13
 # Hvor gammel er din mor? 37
@@ -77,9 +77,9 @@ svar = input("Hva syns dere om å være ", sum_alder, "? ")
 # TypeError: input expected at most 1 arguments, got 3
 # >>>
 # ```
-# 
+#
 # Den første feilen viser seg i linjen "Gratulerer..." Summen skulle ha blitt 50 år. Men vi har de to alderne fortsatt bare lagret som tekststrenger. Da betyr `+` å hekte sammen strengene, ikke å gjøre noen addisjon. Altså får vi `'13' + '37'` som blir `'1337'` heller enn `13 + 37` som blir `50`. Her måtte vi ha konvertert fra tekst til tall før vi gjorde addisjonen.
-# 
+#
 # Den andre feilen oppstår i input-setninga. I `print()` er det lov å liste opp mange argumenter, både tekst og tall, med komma mellom. I en `input()` er det bare lov å ha ett argument, som må være en tekststreng (ledeteksten). Som det sies i feilmeldinga: "input expected at most 1 arguments, got 3". For å klare oss med bare ett argument - men samtidig få stilt det spørsmålet vi ønsker ("Hva syns dere om å være 50?" hvis summen var 50) - må vi plusse sammen delene til én tekststreng heller enn å ha delene skilt med komma. `input("Hva syns dere om å være" + sum_alder + "? ")` vil imidlertid ikke funke hvis sum_alder er et tall, for å det går ikke å plusse sammen tekst og tall. To tekster kan derimot godt plusses sammen (som vi nettopp så med `'1337'`). Hvis vi konverterer `sum_alder` til tekst, vil det funke. Fikset kode vist under:
 
 # In[ ]:
@@ -99,8 +99,8 @@ svar = input("Hva syns dere om å være " + str(sum_alder) + "? ")
 # Be brukeren om å skrive inn 3 flyttall. Konverter først strengene til flyttall med `float()`, bruk så `int()` til å konvertere dem til heltall. Be også brukeren om å skrive inn et heltall og bruk `float()` til å konvertere tallet til et desimaltall.
 
 # Eksempel på utskrift fra programmet hvis du får til det til å funke:
-# 
-# 
+#
+#
 # ```python
 # Skriv inn et flyttall: 4.232443
 # Skriv inn enda et flyttall: 3.24324
@@ -109,7 +109,7 @@ svar = input("Hva syns dere om å være " + str(sum_alder) + "? ")
 # Skriv inn et heltall: 13
 # Konvertert til flyttall blir det: 13.0
 # ```
-# 
+#
 # ***Skriv koden din i blokka under:***
 
 # In[1]:
@@ -130,9 +130,9 @@ print(f'Konvertert til flyttall blir det: {float(num4)}')
 # ## b)
 
 # Skriv et program som ber brukeren oppgi navn og alder, samt hvor gammel vedkommende var da han/hun begynte å programmere.  Et eksempel på kjøring er vist nedenfor, hvor *Martin, 21*, *19* og *Ja* bakerst i linjene 1, 2, 3 og 5 skrives av brukeren mens resten skrives av maskinen. Lag programmet slik at det tilpasser seg dataene som skrives inn. (Særlig for denne deloppgaven lønner det seg å se på tutorial lenger oppe hvis du ikke får den til)
-# 
+#
 # Eksempel på kjøring:
-#   
+#
 # ```
 # Skriv ditt navn: Martin
 # Hei, Martin, hvor gammel er du? 21
@@ -141,7 +141,7 @@ print(f'Konvertert til flyttall blir det: {float(num4)}')
 # Syns du de 2 årene har vært givende? Ja
 # Takk for svar, Martin!
 # ```
-# 
+#
 # ***Skriv koden din i blokka under.***
 
 # In[2]:
@@ -185,9 +185,9 @@ print("round(12345.67, -3) blir", round(12345.67, -3))
 # ## c)
 
 # Be brukeren om skrive inn et flyttall med minst 5 siffer både før og etter punktum. Ta vare på flyttallet i en variabel, konverter det deretter på diverse måter som antydet i eksempelutskriften under. Til slutt skal heltallet du fikk fra `int()` konverteres tilbake til et flyttall.
-# 
+#
 # Kjøring av kode:
-#   
+#
 # ```python
 # Vennligst gi inn et flyttall med minst 5 siffer både før og etter .
 # Hva er tallet ditt? 123456.724353
@@ -198,7 +198,7 @@ print("round(12345.67, -3) blir", round(12345.67, -3))
 # Avrundet til nærmeste tusen: 123000
 # Heltall fra int() konvertert tilbake til flyttall: 123456.0
 # ```
-# 
+#
 # ***Skriv koden din i blokka under.***
 
 # In[5]:
@@ -217,9 +217,9 @@ print(f'Heltall fra int() konvertert tilbake til flyttall: {float(int(num))}')
 # ## d)
 
 # Ta først inn et flyttall fra brukeren og spør deretter brukeren om hvor mange desimaler i det avrundede tallet som er ønskelig, og bruk `round()` med dette tallet.
-# 
+#
 # Eksempel på kjøring:
-#  
+#
 # ```python
 # Skriv et flyttall: 3.14159263
 # Hvor mange desimaler er ønskelig? 2
