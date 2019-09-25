@@ -29,7 +29,7 @@ def progress( chars, secret ):
     return prog
 
 
-def has_won(correct_chars, secret_chars):
+def have_won(correct_chars, secret_chars):
     ans = True
     for c in secret_chars:
         if c in correct_chars:
@@ -59,7 +59,7 @@ def hangman():
             else:
                 print( f'Du har {lives} liv igjen, prøv på nytt.' )
         print(progress(correct_chars, secret))
-        if has_won(correct_chars, secret_chars):
+        if have_won(correct_chars, secret_chars):
             break
     if lives > 0:
         print( f'Du klarte de med {lives} liv igjen.' )
