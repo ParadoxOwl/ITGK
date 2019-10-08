@@ -17,6 +17,7 @@ def secant_method( x_k, x_k1, func, tol ):
     while abs( func( x_k ) ) > tol:
         temp = x_k
         x_k -= func( x_k ) / differentiate( x_k, x_k1, func )
+        x_k1 = temp
     return x_k
 
 
