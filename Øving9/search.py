@@ -24,7 +24,8 @@ def count_words( filename ):
             try:
                 d[word] += 1
             except KeyError:
-                d[words] = 1
+                d[word] = 1
+    return d
 
 
 story = read_from_file( 'alice_in_wonderland.txt' )
