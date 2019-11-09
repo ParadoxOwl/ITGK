@@ -59,6 +59,18 @@ def has_won( player, board ):
     return rows( player, board ) or collums( player, board ) or diagonals( player, board )
 
 
+def tie( board ):
+    tied = True
+    for row in board:
+        for p in row:
+            if p == '':
+                tied = False
+                break
+        if tied is False:
+            break
+    return tied
+
+
 def get_player_info():
     x = ( 'X', input('Navn til spiller X: ') )
     o = ( 'O', input('Navn til spiller O: ') )
@@ -111,6 +123,11 @@ def main():
             system( 'clear' )
             disp_board( board )
             print( f'{player[1]} vant!' )
+            break
+        elif tie( board ):
+            system( 'clear' )
+            disp_board( board )
+            print( 'Uavgjort.' )
             break
         else:
             turn += 1
